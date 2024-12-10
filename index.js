@@ -238,7 +238,6 @@ daysWrapper.appendChild(button);
 button.addEventListener('click', () => {
 console.log("test " + button.id);
 newNote();
-record();
 div = document.createElement("div");
 div.id = (`${i}` + " " + `${Months[x]}` + " " + `${(cYear + y)}`);
 console.log(div.id);
