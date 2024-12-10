@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>CheckBox</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="records.js" defer></script>
+ </head>
+    <body>
+        <div id="dayFocus"></div>
+    <label for="myCheck1">
+        1 Checkbox: <input type="checkbox" class="checkbox" id="myCheck1" value="myvalue1">,
+    </label>
+    <label for="myCheck2">
+        2 Checkbox: <input type="checkbox" class="checkbox" id="myCheck2" value="myvalue2">,
+    </label> 
+    <label for="myCheck3">
+        3 Checkbox: <input type="checkbox" class="checkbox" id="myCheck3" value="myvalue3">,
+    </label> 
+    <label for="myCheck4">
+        4 Checkbox: <input type="checkbox" class="checkbox" id="myCheck4" value="myvalue4">,
+    </label>
+    <label for="myCheck5">
+        5 Checkbox: <input type="checkbox" class="checkbox" id="myCheck5" value="myvalue5">
+    </label>
+    
+
+<p>Click the buttons below to Quick Log and/or add detailed notes.</p>
+
+<button onclick="logIt()">Quick Log</button>
+<button onclick="noteIt()">Notation</button>
+
+<script defer>
+function logIt() {
+ // let x = document.getElementById("myCheck").value;
+ // alert("The value of the checkbox is: " + x);
+let i = 1
+
+ const cb = document.querySelector('.checkbox');
+console.log(cb.checked);
+
+// let values = [],
+  //  inputs = document.getElementsByTagName("input");
+
+//for (let i = inputs.length -1 ; i>= 0; i--)
+  //  if (inputs[i].type === "checkbox" && inputs[i].checked)
+    //      values.push(inputs[i].value);
+
+
+//const symp = console.log(document.querySelectorAll(".checkbox"));
+//for(let i = 0; i < symp.length; i++) {
+  //console.log(symp[i].value);
+//} 
+}
+
+function noteIt() {
+  var x = document.getElementById("myCheck").value = "newCheckboxValue";
+  alert ("The value was changed to: " + x);
+}
+
+let classes = document.getElementsByClassName("checkbox"); // Do not use a period here!
+let values = Array.prototype.map.call(classes, function(el) {
+return(el.value),
+console.log(el.value);
+});
+/*
+let classesNodeList = document.querySelectorAll(".checkbox");
+let classes = Array.prototype.map.call(classesNodeList, function(element) {
+    return element.value;
+}); */
+</script>
+
+
+    
+    </body>
+</html>
