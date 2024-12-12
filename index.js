@@ -23,7 +23,7 @@ console.log(output);
 console.log(x);
 console.log(y);
 let test = cMonth + mOffset;
-let sDay 
+let sDay = 0;
 //= new Date(cYear + y, ci, 1, 0).getDay();
 let foo = new Date((cYear + y), (cMonth + mOffset, 1)).getDay;
 //console.log(sDay);
@@ -156,7 +156,7 @@ console.log(fDay);
 
  //   document.getElementById("weekday").innerHTML = Weekday;
  //   for (let i = 1; i <= lDay; i++);
-    console.log(lDay, cDay );
+   
 //}
 
 
@@ -183,22 +183,6 @@ function nMonth(){
   console.log(mOffset);*/
  
  
-  
-   // Months.keys[i] =
-   //  Months;
-   /*
-   let i = 1;
-   mOffset += i;
-   document.getElementById("NavR").addEventListener('click', () => {
-     // mOffset = mOffset + 1;
-    
-    i++;
-    
-     //mOffset++ ;
-      console.log("test "+ mOffset);
-      })
-   console.log("next month", `${mOffset}`, mOffset, Months);
-   */
     showCurrDate();
    formCalendar();
   //    showCurrDate();
@@ -219,54 +203,14 @@ console.log(lDay);
 
 function formCalendar(){
     let sDay = new Date(cYear + y, ci, 1, 0).getDay();
-lD = /*document.getElementById("today").innerHTML = */ new Date(cYear, cMonth + 1, 0).getDate();
+lD = new Date(cYear + y, ci + 1, 0).getDate()
+/*document.getElementById("today").innerHTML = */// new Date(cYear, cMonth , 0).getDate();
 let i = 1;
-document.querySelectorAll(".wDates").forEach(el => el.remove());
-
-/*
-prevNextIcon.forEach(icon => { // getting prev and next icons
-    icon.addEventListener("click", () => { // adding click event on both icons
-        // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
-        currMonth = icon.id === "NavL" ? cMonth - 1 : cMonth + 1;
-
-        if(currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
-            // creating a new date of current year & month and pass it as date value
-            date = new Date(cYear, cMonth, new Date().getDate());
-            cYear = date.getFullYear(); // updating current year with new date year
-            cMonth = date.getMonth(); // updating current month with new date month
-        } else {
-            date = new Date(); // pass the current date as date value
-        }
-        lastDayCalculator(); // calling Calendar function
-        prevNextIcon.forEach(icon => { // getting prev and next icons
-            icon.addEventListener("click", () => { // adding click event on both icons
-                // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
-                currMonth = icon.id === "NavL" ? currMonth - 1 && mOffset - 1 : currMonth + 1 && mOffset + 1;
-        
-                if(currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
-                    // creating a new date of current year & month and pass it as date value
-                    date = new Date(cYear, cMonth, new Date().getDate());
-                    cYear = date.getFullYear(); // updating current year with new date year
-                    cMonth = date.getMonth(); // updating current month with new date month
-                } else {
-                    date = new Date(); // pass the current date as date value
-                }
-            //    renderCalendar(); // calling renderCalendar function
-             /*   showCurrDate(){
-                    document.getElementById("currDate").innerHTML = cMonth + 1 + mOffset +" " + cDate + " " + cYear;
-                    }; 
-            }); 
-        
-        });   
-        
-        
-        
-    // function showCurrDate(){
-   //     document.getElementById("today").innerHTML = cMonth + 1 + mOffset +" " + cDate + " " + cYear;
-      //  }
-    })}); */
+    document.querySelectorAll(".wDates").forEach(el => el.remove());
     document.querySelectorAll(".bDates").forEach(el => el.remove());
-for( let b = 0; b < sDay; b++){
+        console.log(sDay);
+        console.log(lDay, cDay );
+    for( let b = 0; b < sDay; b++){ console.log(sDay);
     const button = document.createElement("button");
 button.innerText = "";
 //console.log(Months[x]);
@@ -329,51 +273,5 @@ noteBook.appendChild(div);
 //div.id = document.querySelectorAll('notes').parentElement.id;
 
 };
-/*
-const renderCalendar = () => {
-    let firstDayofMonth = new Date(cYear, cMonth, 1).getDay(), // getting first day of month
-    lastDateofMonth = new Date(cYear, cMonth + 1, 0).getDate(), // getting last date of month
-    lastDayofMonth = new Date(cYear, cMonth, lastDateofMonth).getDay(), // getting last day of month
-    lastDateofLastMonth = new Date(cYear, cMonth, 0).getDate(); // getting last date of previous month
-    let liTag = "";
-   }
 
-renderCalendar();
-
-prevNextIcon.forEach(icon => { // getting prev and next icons
-    icon.addEventListener("click", () => { // adding click event on both icons
-        // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
-        currMonth = icon.id === "NavL" ? currMonth - 1 && mOffset - 1 : currMonth + 1 && mOffset + 1;
-
-        if(currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
-            // creating a new date of current year & month and pass it as date value
-            date = new Date(cYear, cMonth, new Date().getDate());
-            cYear = date.getFullYear(); // updating current year with new date year
-            cMonth = date.getMonth(); // updating current month with new date month
-        } else {
-            date = new Date(); // pass the current date as date value
-        }
-        renderCalendar(); // calling renderCalendar function
-        function showCurrDate(){
-            document.getElementById("today").innerHTML = cMonth + 1 + mOffset +" " + cDate + " " + cYear;
-            };
-    });
-
-});
-*/
-
-
-//function showCurrDate(){
-//document.getElementById("today").innerHTML = cMonth + 1 + mOffset +" " + cDate + " " + cYear;
-//}
 formCalendar();
-//const sympArray = [];
-//const symp
-
-
-
-
-
-
-
-
