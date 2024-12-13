@@ -5,7 +5,8 @@ const cMonth = d.getMonth();
 const cDate = d.getDate();
 const cDay = d.getDay(); 
 const lDay = new Date(cYear, cMonth , 0);
-const fDay = new Date(cYear, cMonth, cDay);
+const tStamp = (d.getHours() , d.getMinutes())
+// new Date(cYear, cMonth, cDay);
 const Months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const Weekday = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 let mOffset = 0;
@@ -17,7 +18,7 @@ prevNextIcon = document.querySelectorAll(".icons button");
 //console.log(document.getElementById("currDate").innerHTML);
 let output = Months[x] +" " + cDate + " "+ (cYear + y);
 console.log(cDay + "cDay")
-console.log(fDay + "fDay");
+//console.log(fDay + "fDay");
 //console.log(output.cDay);
 console.log(output);
 console.log(x);
@@ -110,9 +111,9 @@ console.log(y);
    
 function datePush(){document.getElementById("currDate").innerHTML = Months[ci] +" " + cDate + " "+( cYear + y);
     ci = cMonth + mOffset;};
-console.log(document.getElementById("currDate").innerHTML);
+//console.log(document.getElementById("currDate").innerHTML);
 console.log(Months[x] +" " + cDate + " " + ( cYear + y ));    
-console.log(fDay);
+///console.log(fDay);
     
     console.log(Months);
     console.log("cMonth variable " + cMonth);
@@ -143,40 +144,7 @@ console.log(fDay);
     console.log(Weekday[6]);
     datePush();
 };
- //   showCurrDate();
 
-//window.onload = () => {
-
-    
-   //     document.getElementById("currDate").innerHTML = cMonth + 1 + mOffset +" " + cDate + " " + cYear;
-    
-//};
-   // document.getElementById("currDate").innerHTML = cMonYear;
-   
-
- //   document.getElementById("weekday").innerHTML = Weekday;
- //   for (let i = 1; i <= lDay; i++);
-   
-//}
-
-
-
-/*
-function disMonth(){
-    let i = 1;
-    document.onclick = () => 
-    
-      
- 
-      
-    document.getElementById("currDate").innerHTML =
-    cMonYear;
-     Months[cMonth + i], i+=1 ;
-   }
-   
-    
-   disMonth();
-    */
 function nMonth(){
   mOffset = mOffset + 1 ; 
   /*(mOffset >= 11) ? mOffset - 11 : mOffset = mOffset;
@@ -204,7 +172,7 @@ console.log(lDay);
 function formCalendar(){
     let sDay = new Date(cYear + y, ci, 1, 0).getDay();
 lD = new Date(cYear + y, ci + 1, 0).getDate()
-/*document.getElementById("today").innerHTML = */// new Date(cYear, cMonth , 0).getDate();
+
 let i = 1;
     document.querySelectorAll(".wDates").forEach(el => el.remove());
     document.querySelectorAll(".bDates").forEach(el => el.remove());
@@ -213,14 +181,16 @@ let i = 1;
     for( let b = 0; b < sDay; b++){ console.log(sDay);
     const button = document.createElement("button");
 button.innerText = "";
-//console.log(Months[x]);
-button.id = (`${b} + " " + ${Months[x]} + " " + ${(cYear + y)}`);
-button.classList.add('bDates');
-//let daysWrapper = 
+
+button.id = (`${b}  ${Months[ci]} ${(cYear + y)}`);
+button.classList.add('bDates', 'allDates');
+
 document.getElementById("daysWrapper");
 daysWrapper.appendChild(button);
 button.addEventListener('click', () => {
-console.log("test " + button.id)
+
+    
+
 }
 
 )
@@ -236,16 +206,28 @@ const Days = [i];
 const button = document.createElement("button");
 button.innerText = `${i}`;
 //console.log(Months[x]);
-button.id = (`${i}` + " " + `${Months[x]}` + " " + `${(cYear + y)}`);
-button.classList.add('wDates');
-//let daysWrapper = 
-document.getElementById("daysWrapper");
+button.id = (`${i} ${Months[ci]} ${(cYear + y)}`);
+let id = button.id;
+button.classList.add('wDates', 'allDates');
+let daysWrapper = document.getElementById("daysWrapper");
 daysWrapper.appendChild(button);
 button.addEventListener('click', () => {
+    const dayNote = {
+        date: id,
+        symptoms: [],
+        notes: [],
+      };
+      dayNote.ID = i;
+      dayNote.symptoms =  i;
+      dayNote.notes = i;
+    localStorage.setItem(`dayNote`, JSON.stringify(dayNote));
+console.log("test " + button.id)
+localStorage.getItem(`dayNote`);
+console.log(dayNote)//, JSON.parse(dayNote)
 console.log("test " + button.id);
 newNote();
 div = document.createElement("div");
-div.id = (`${i}` + " " + `${Months[x]}` + " " + `${(cYear + y)}`);
+div.id = (`${i}` + " " + `${Months[ci]}` + " " + `${(cYear + y)}`);
 console.log(div.id);
 document.getElementById("noteBook");
 div = document.createElement("div");
@@ -259,11 +241,11 @@ noteBook.appendChild(div);
 
 function newNote(){
 //     LINK TO CHECKBOX.HTML   ---> 
-let win = window.open("checkbox.html");
+let win = window.open("checkbox.html", "_self");
 //let Note = prompt("enter any symptoms")
 
 //};
-
+/*
 document.getElementById("noteBook");
 div = document.createElement("div");
 //div.id = (`${i}` + " " + `${Months[x]}` + " " + `${(cYear + y)}`);
@@ -271,7 +253,10 @@ div.classList.add('notes');
 document.getElementById("noteBook");
 noteBook.appendChild(div);
 //div.id = document.querySelectorAll('notes').parentElement.id;
-
+*/
 };
+//let dispDates =console.log(document.getElementsByClassName("allDates").length)
+//document.getElementsByClassName("allDates")
 
+//console.log(dispDates);
 formCalendar();
