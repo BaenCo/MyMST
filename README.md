@@ -5,3 +5,4 @@ My calendar project extensively uses arrays in vanilla js, css, and html, that d
 I am using the 3rd party api Google Fonts for the nice, clearly legible viewability on cell screens, where it will be used the most, and some icons, to jazz it up a bit. I will be implementing major customization in the future.
 
 As far as I know, you shouldn't have any problems running it. Put everything in the same folder.
+*Spoiler, it WAS a sleepless night!*
