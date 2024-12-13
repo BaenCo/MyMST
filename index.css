@@ -4,6 +4,7 @@ html{
     background-color: #dfdfdf;
 }
 body{
+    font-family: 'metamorphous', sans-serif;
     height: 100%;
     width: 100%;
     background-color: aqua;
@@ -25,7 +26,8 @@ z-index: 0;
 }
 
 .Navs{
-width: 2%;
+width: 12%;
+height: 106%;
 background-color: lightgreen;
 display: flex;
 align-content: space-evenly;
@@ -54,29 +56,34 @@ z-index: 1;
             justify-content: space-between;
             padding-left:4%;
             padding-right: 8%;
-            font-family: fantasy;
+            font-family: metamorphous;
             font-size: xxx-large;
 }
 #daysWrapper{
     width: 100%;
     height: 100%;
+    align-content: flex-start;
+    align-items: flex-start;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     background-color: purple;
 }
       .wDates{
 width: 14%;
-min-height: 20%;
-font-family: fantasy;
+height: 15%;
+min-height: 0%;
+font-family: metamorphous;
 font-size: xxx-large;
 color: blueviolet;
 border-radius: 15px;
 }
 
 .bDates{
-    background-color: transparent;
-    width: 14%;
-min-height: 20%;
+background-color: transparent;
+height: 15%; 
+width: 14%;
+min-height: 15%;
 font-family: fantasy;
 font-size: xxx-large;
 color: blueviolet;
@@ -114,3 +121,21 @@ border-radius: 15px;
     height: 50%;
     background-color: red;
 }
+#dayF{
+    align-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 50%;
+    background-color: lightseagreen
+}
+.metamorphous-regular {
+    font-family: "Metamorphous", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  #DayNote{
+    display: none;
+  }
