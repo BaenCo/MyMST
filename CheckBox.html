@@ -3,42 +3,75 @@
 <head>
     <meta charset="UTF-8" />
     <title>CheckBox</title>
+    
     <link href="index.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="records.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
  </head>
     <body>
-        <div id="dayFocus"></div>
+        <div id="dayF">
+    
     <label for="myCheck1">
-        1 Checkbox: <input type="checkbox" class="checkbox" id="myCheck1" value="myvalue1">,
+        Injection <input type="checkbox" class="checkbox" id="myCheck1" value=""  name="Injection" onclick="this.value = this.name">
     </label>
     <label for="myCheck2">
-        2 Checkbox: <input type="checkbox" class="checkbox" id="myCheck2" value="myvalue2">,
+        Cognition <input type="checkbox" class="checkbox" id="myCheck2" value="" name="Cognition" onclick="this.value = this.name">
     </label> 
     <label for="myCheck3">
-        3 Checkbox: <input type="checkbox" class="checkbox" id="myCheck3" value="myvalue3">,
+        Balance <input type="checkbox" class="checkbox" id="myCheck3" value="" name="Balance" onclick="this.value = this.name">
     </label> 
     <label for="myCheck4">
-        4 Checkbox: <input type="checkbox" class="checkbox" id="myCheck4" value="myvalue4">,
+        Migraine <input type="checkbox" class="checkbox" id="myCheck4" value="" name="Migraine" onclick="this.value = this.name">
     </label>
     <label for="myCheck5">
-        5 Checkbox: <input type="checkbox" class="checkbox" id="myCheck5" value="myvalue5">
+        Pain <input type="checkbox" class="checkbox" id="myCheck5" value="" name="Pain" onclick="this.value = this.name">
     </label>
     
+    
 
+    <form id="DayNote">
+        Name: <input type="text" name="DayNote">
+      </form>
+      
+      <textarea id="tArea" rows="15%" cols="132%" name="comment" form="DayNote">Test</textarea>
+      </div>
 <p>Click the buttons below to Quick Log and/or add detailed notes.</p>
 
 <button onclick="logIt()">Quick Log</button>
 <button onclick="noteIt()">Notation</button>
+<button onclick="test()" id="test">test</button>
 
 <script defer>
+
+function test(){
+    const input = document.getElementById("tArea");
+const inputValue = input.value;
+console.log(inputValue);
+
+}
+//function popVal(){
+ //   this.document.getElementById("myCheck").value = this.document.getElementById("myCheck").name;
+//}
 function logIt() {
+    console.log(dayNotes);
+//    const dayNote = localStorage.getItem("dayNote");
+//   console.log("dayNote: ", JSON.parse(dayNote));
+   // cBoxCheck();
  // let x = document.getElementById("myCheck").value;
  // alert("The value of the checkbox is: " + x);
-let i = 1
+//let i = 1
 
- const cb = document.querySelector('.checkbox');
-console.log(cb.checked);
+ const cb = document.querySelector('.checkbox')
+console.log(cb.checked)
 
+Array.from(document.querySelectorAll("input[class='checkbox']")).map((el) => el.value);
+
+//Array.from(document.querySelectorAll("input[type=checkbox][name=type]:checked"), e => e.value);
 // let values = [],
   //  inputs = document.getElementsByTagName("input");
 
@@ -54,20 +87,34 @@ console.log(cb.checked);
 }
 
 function noteIt() {
-  var x = document.getElementById("myCheck").value = "newCheckboxValue";
-  alert ("The value was changed to: " + x);
-}
-
+    function cBoxCheck(){
 let classes = document.getElementsByClassName("checkbox"); // Do not use a period here!
 let values = Array.prototype.map.call(classes, function(el) {
 return(el.value),
 console.log(el.value);
-});
+});};
+ 
+    const data = localStorage.getItem("dayNote");
+    console.log("data: ", JSON.parse(data));
+
+};
+function cBoxCheck(){
+let classes = document.getElementsByClassName("checkbox"); // Do not use a period here!
+let values = Array.prototype.map.call(classes, function(el) {
+return(el.value),
+console.log(el.value);
+dayNote.symptoms = Arrayfrom.el.value;
+dayNote.notes = inputValue;
+console.log(inputvalue, "input")
+console.log(symptoms)
+localStorage.setItem(`dayNote`, JSON.stringify(dayNote));
+});};
 /*
 let classesNodeList = document.querySelectorAll(".checkbox");
 let classes = Array.prototype.map.call(classesNodeList, function(element) {
     return element.value;
 }); */
+
 </script>
 
 
