@@ -429,7 +429,7 @@ newNote();
 
 function newNote(){
 //     LINK TO CHECKBOX.HTML   ---> 
-//let win = window.open("checkbox.html", "_self");
+let win = window.open("checkbox.html", "_self");
 //let Note = prompt("enter any symptoms")
 
 //};
