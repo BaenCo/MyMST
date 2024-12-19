@@ -377,6 +377,7 @@ const lskeyTest = localStorage.getItem('lskey');
 console.log(lskeyTest);
 if (localStorage.getItem(lskeyTest) == null) {
   console.log("Item does not exist");
+  localStorage.setItem(`lskey`, name);
 }
 //if ()
     localStorage.setItem(`lskey`, name);
@@ -399,11 +400,16 @@ if (localStorage.getItem(lskeyTest) == null) {
   //  const keyOb = JSON.parse(keyCheck);
     let nameSt = JSON.stringify(name);         //
     keySt = JSON.stringify(keyOb);             //copied from above; keeping above  
- //   localStorage.setItem(name, dayNoteSt);       //for legacy purposesy
+ //
+    if (keyCheck == null){
+        
+
+    
+ localStorage.setItem(name, dayNoteSt);       //for legacy purposesy
     pullTestSt =localStorage.getItem(nameSt); 
     pullTest = localStorage.getItem(name);
     console.log(pullTest);
-}
+}}
 
     console.log('else')
 
@@ -423,7 +429,7 @@ newNote();
 
 function newNote(){
 //     LINK TO CHECKBOX.HTML   ---> 
-let win = window.open("checkbox.html", "_self");
+//let win = window.open("checkbox.html", "_self");
 //let Note = prompt("enter any symptoms")
 
 //};

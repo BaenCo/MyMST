@@ -176,7 +176,8 @@ let keyOb = JSON.parse(keyCheck);      // //get note from local storage
 console.log(keyCheck);
 console.log(keyOb);
 console.log(keys);
-//console.log(keyParse);
+keyParse = localStorage.getItem(keys);
+console.log(keyParse);
 
 
 /*
@@ -360,7 +361,7 @@ for (let i = 0; inputs.length > i; i++)
 
 console.log(bookOb);
 
-
+    console.log(keyCheck);
 
     
     bookOb.symptoms = symptoms;
