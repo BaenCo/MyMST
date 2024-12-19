@@ -1,4 +1,9 @@
-const gebid = document.getElementById;
+const lsName = localStorage.getItem(name);
+console.log(lsName);
+const parseName = JSON.parse(lsName);
+const lsDate = JSON.parse(lsName);
+
+//const gebid = document.getElementById;
 const d = new Date();
 let cYear = d.getFullYear();
 const cMonth = d.getMonth();
@@ -50,6 +55,13 @@ if(zDay < 0){
     zDay = zDay
 };
 */
+
+
+function noteRead(){
+    localStorage.getItem(`dayNotes`);
+console.log(dayNotes), JSON.parse(dayNotes)
+};
+
 function yCheck(){
     if (ci > 11){ 
         
@@ -212,20 +224,189 @@ button.classList.add('wDates', 'allDates');
 let daysWrapper = document.getElementById("daysWrapper");
 daysWrapper.appendChild(button);
 button.addEventListener('click', () => {
-    const dayNote = {
-        date: id,
+    const dayNotes = `dayNote${i}`
+    console.log(i)
+    console.log(dayNotes);
+    const name = (" dayNotes " + `${Months[ci]} `+` ${i} ` + ` ${(cYear + y)}`);
+  //  localStorage.setItem('lskey', name);
+  
+    const lskeyTest = localStorage.getItem('lskey');
+    console.log(lskeyTest);
+ /*   const lsName = localStorage.getItem(name);
+    console.log(lsName);
+    const parseName = JSON.parse(lsName);
+    const lsDate = JSON.parse(lsName);       */
+;
+    console.log(name);
+    console.log(lsDate);
+   
+
+
+ /*   if (lsDate.date != null){
+        console.log(lsDate.date)
+         }else{
+            console.log(' ls is null null null')
+         };
+*/
+/*
+         
+            console.log(lsDate.date);
+            const lsNameStr = lsName.toString();
+            const nameStr = name.toString(name);
+            console.log(lsNameStr);
+            console.log(nameStr);
+        
+        } else {
+            console.log('lsDate or lsDate.date is null or undefined'); 
+        }
+
+
+        */
+    console.log(name);
+  
+
+
+
+  //  if ((lsDate.date != name || lsName == null))
+       // !== name || localStorage.getItem(name) == null)
+  if (lsDate !== null && lsDate !== undefined && lsDate.date != null ) {
+
+
+
+
+  //  {
+        console.log("L.S. is not null or undefined")
+    let dayNote = {
+        date: `${name}`,
         symptoms: [],
         notes: [],
       };
       dayNote.ID = i;
-      dayNote.symptoms =  i;
-      dayNote.notes = i;
-    localStorage.setItem(`dayNote`, JSON.stringify(dayNote));
+     console.log( dayNote.symptoms.length);
+     console.log( dayNote.notes.length);
+     console.log(dayNote.date);
+     const dayNoteSt = JSON.stringify(dayNote);
+     console.log(dayNoteSt);
+  //  localStorage.setItem(name, dayNoteSt)
 console.log("test " + button.id)
-localStorage.getItem(`dayNote`);
-console.log(dayNote)//, JSON.parse(dayNote)
-console.log("test " + button.id);
+  //  localStorage.setItem(`lskey`, name);
+    console.log(name);
+    console.log(lsName);
+    console.log(parseName);
+   let keys =  localStorage.getItem(`lskey`);
+   let keyCheck = localStorage.getItem(keys);
+   let keyOb = JSON.parse(keyCheck);
+    console.log(keyOb);
+    console.log(keyOb.symptoms);
+    console.log(keyOb.notes);
+  // let keyCheck = localStorage.getItem(keys);
+   console.log(keyCheck);
+
+
+
+
+
 newNote();
+    }else if (name == lsName){ 
+        
+
+      
+
+      //  const key = JSON.stringify(`${name}`);
+        
+
+/*
+        const dayNote = localStorage.getItem(keys);
+     keyOb = JSON.parse(dayNote);
+     console.log(dayNote);
+     dayNoteOb.pass = `${keys}`;
+     console.log(dayNoteOb);
+
+*/ 
+//const keyParse = JSON.parse(keys); // obsolete; keyname is simple string, not
+const keys =  localStorage.getItem(`lskey`);
+const keyCheck = localStorage.getItem(keys); // getting notes; keys was keyParse
+const keyOb = JSON.parse(keyCheck);
+console.log(keyCheck);
+console.log(keyOb);
+console.log(keys);
+
+
+
+        console.log("test already exists " + button.id);
+     //   localStorage.setItem(`lskey`, key);
+    //    localStorage.setItem(JSON.stringify(`${name}`), JSON.stringify(dayNote));
+       // localStorage.setItem(`lskey`, JSON.stringify(`${i}`));
+    //keyOb = JSON.parse(`key`);
+    console.log(keyOb);
+    keyOb.test = "Pulltest";
+    console.log(name)
+   
+   /* ****  Will force save to LS if enabled
+          *************************
+               ****************
+                   *********
+                      ***
+                       *
+    let nameSt = JSON.stringify(name);
+    keySt = JSON.stringify(keyOb);
+    localStorage.setItem(nameSt, keySt);
+    pullTest =localStorage.getItem(nameSt);
+    console.log(pullTest);
+    */
+    newNote();
+}else{
+
+
+    let dayNote = {
+        date: `${name}`,
+        symptoms: [],
+        notes: [],
+      };
+      dayNote.ID = i;
+     console.log( dayNote.symptoms.length);
+     console.log( dayNote.notes.length);
+     console.log(dayNote.date);
+     const dayNoteSt = JSON.stringify(dayNote);
+     console.log(dayNoteSt);
+     console.log(dayNote);
+  // localStorage.setItem(name, dayNoteSt)
+console.log("test " + button.id)
+
+const lskeyTest = localStorage.getItem('lskey');
+console.log(lskeyTest);
+if (localStorage.getItem(lskeyTest) == null) {
+  console.log("Item does not exist");
+}
+//if ()
+    localStorage.setItem(`lskey`, name);
+    console.log(name);
+    console.log(lsName);
+    if (lsName == null){
+        console.log('OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+    }
+    console.log(parseName);
+   let keys =  localStorage.getItem(`lskey`);
+   console.log(keys);
+   let keyCheck = localStorage.getItem(keys);
+   console.log(keyCheck);
+   let keyOb = JSON.parse(keyCheck);
+
+   //localStorage.setItem(keys, dayNoteSt); // blanks out info and returns new. maybe use as delete
+
+   // const keys =  localStorage.getItem(`lskey`);
+  //  const keyCheck = localStorage.getItem(keys); // getting notes; keys was keyParse
+  //  const keyOb = JSON.parse(keyCheck);
+    let nameSt = JSON.stringify(name);         //
+    keySt = JSON.stringify(keyOb);             //copied from above; keeping above  
+ //   localStorage.setItem(name, dayNoteSt);       //for legacy purposesy
+    pullTestSt =localStorage.getItem(nameSt); 
+    pullTest = localStorage.getItem(name);
+    console.log(pullTest);
+}
+
+    console.log('else')
+
 div = document.createElement("div");
 div.id = (`${i}` + " " + `${Months[ci]}` + " " + `${(cYear + y)}`);
 console.log(div.id);
@@ -234,10 +415,11 @@ div = document.createElement("div");
 box = document.createElement("div");
 box.setAttribute("style", "background-color: red");
 div.classList.add('notes');
-noteBook.appendChild(div);
-}
+//noteBook.appendChild(div);    
+newNote();
 
-)}}
+
+})}}
 
 function newNote(){
 //     LINK TO CHECKBOX.HTML   ---> 
