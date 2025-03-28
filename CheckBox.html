@@ -9,32 +9,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=syringe" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
  </head>
     <body>
         <div id="dayF">
     
+        <label class="label2 material-symbols-rounded" for="myCheck1">
         <label class="label" for="myCheck1">
         <input type="checkbox" class="checkbox" id="myCheck1" value=""  name=" Injection" onclick="toggle.call(this)">
-         Injection </label>
+      </label>Injsyringe</label>
 
+         <label class="label2 material-symbols-rounded" for="myCheck2">
          <label class="label" for="myCheck2">
          <input type="checkbox" class="checkbox" id="myCheck2" value="" name=" Cognition" onclick="toggle.call(this)">
-         Cognition</label> 
+        </label>CogCognition</label>
 
+         <label class="label2 material-symbols-rounded" for="myCheck3">
          <label class="label" for="myCheck3">
          <input type="checkbox" class="checkbox" id="myCheck3" value="" name=" Balance" onclick="toggle.call(this)">
-         Balance</label> 
+        </label>Balfalling</label>
 
+         <label class="label2 material-symbols-rounded" for="myCheck4">
          <label class="label" for="myCheck4">
         <input type="checkbox" class="checkbox" id="myCheck4" value="" name=" Migraine" onclick="toggle.call(this)">
-        Migraine </label>
+      </label>Migbackground_replace</label>
 
+        <label class="label2 material-symbols-rounded" for="myCheck5">
         <label class="label" for="myCheck5">
          <input type="checkbox" class="checkbox" id="myCheck5" value="" name=" Pain" onclick="toggle.call(this)">
-         Pain</label>
+        </label>Painstars_2</label>
          <div id="calendar">
          <a href="index.html" id="cal" style="float:right">      Calendar</a>
         </div>
@@ -85,7 +90,7 @@ const lsDate = JSON.parse(lsName);
 
 
 
-     if (lsDate !== null && lsDate !== undefined && lsDate.date != null ) {
+     if (lsDate !== null && lsDate !== undefined && lsDate.date !== null ) {
 
         let dayNote = {
         date: `${name}`,
@@ -239,25 +244,25 @@ console.log(keys);
 
     
 
-Array.from(document.querySelectorAll("input[type=checkbox][name=type]:checked"), e => e.value);
+/*Array.from(document.querySelectorAll("input[type=checkbox][name=type]:checked"), e => e.value);
  let symptoms = [],
-   inputs = document.getElementsByTagName("input");
+   inputs = document.getElementsByTagName("input");*/
 
-for (let i = 0; inputs.length > i; i++)
+/*for (let i = 0; inputs.length > i; i++)
     if (inputs[i].type === "checkbox" && inputs[i].checked){
           symptoms.push(inputs[i].value)
         
-    };
+    };*/
 
-    let input = document.getElementById("tArea");
-    let inputValue = input.value;
+    //let input = document.getElementById("tArea");
+    //let inputValue = input.value;
 
 
    // let dyNote = document.getElementById("noteViewer")   //.innerHTML
 //dyNote.innerHTML = symptoms + "<br />" + "<br />"  + inputValue ;
 
 
-document.getElementById("noteViewer").innerHTML = symptoms + "<br />" + "<br />"  + inputValue ;
+//document.getElementById("noteViewer").innerHTML = symptoms + "<br />" + "<br />"  + inputValue ;
 let keySet = JSON.stringify(keyOb);
 console.log(keySet);
 localStorage.setItem(keys, keySet);   /// keys was keyParse
@@ -317,6 +322,11 @@ console.log(keyOb);
 document.getElementById('noteViewer')
 }
 
+function textPush(){
+  document.getElementById("noteViewer").innerHTML = 
+  keyOb.date + "<br/> " + "<br/>" +keyOb.symptoms + "<br/> " + "<br/>" + keyOb.notes;
+};
+
 function test(){
 
 
@@ -343,7 +353,7 @@ const book = localStorage.getItem(keys); // was keyParse
 const bookOb = JSON.parse(book);
 
 
-Array.from(document.querySelectorAll("input[type=checkbox][name=type]:checked"), e => e.value);
+Array.from(document.querySelectorAll("input[type=checkbox][name=type]:checked"), el => el.value);
  let symptoms = [],
    inputs = document.getElementsByTagName("input");
 
@@ -382,8 +392,8 @@ console.log(inputValue);
 bookOb.notes = inputValue;
 console.log(bookOb.notes);
 /* ***********************REENABLE to get a dbl click requirement on log button*/
-let dyNote = document.getElementById("noteViewer")   //.innerHTML
-dyNote.innerHTML = symptoms + "<br />" + "<br />"  + inputValue ;   
+//let dyNote = document.getElementById("noteViewer")   //.innerHTML
+//dyNote.innerHTML = symptoms + "<br />" + "<br />"  + inputValue ;   
 
      //  document.getElementById("SLS").addEventListener('click', () => {
     console.log(bookOb);
@@ -518,8 +528,8 @@ console.log(keys);
 ///const dayNotes = localStorage.getItem(keys);    TESTING not loading from localstorage
 let classes = document.getElementsByClassName("checkbox"); // Do not use a period here!
 let values = Array.prototype.map.call(classes, function(el) {
-return(el.value),
-console.log(el.value);
+return(el.value)
+/*     2/25/2025 testing   console.log(el.value);
 //console.log(values.value);
 keyOb.symptoms = Arrayfrom(el.value);
 keyOb.notes = inputValue;
@@ -532,8 +542,12 @@ document.getElementById("noteViewer").innerHTML = keyOb.date + "<br/> " + "<br/>
 
 
 
-/*  enable to save to ls from here   */  localStorage.setItem(keys, JSON.stringify(keyOb));
-})
+/*  enable to save to ls from here   */ // localStorage.setItem(keys, JSON.stringify(keyOb));
+
+      
+}
+
+)
 ;};
 /*
 let classesNodeList = document.querySelectorAll(".checkbox");
