@@ -4,51 +4,58 @@
     <meta charset="UTF-8" />
     <title>CheckBox</title>
     
-    <link href="index.css" rel="stylesheet" type="text/css" />
+  
     <script type="text/javascript" src="records.js" defer></script>
+    <script type="text/javascript" src="CheckBox.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=syringe" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+    <link href="index.css" rel="stylesheet" type="text/css" />
  </head>
     <body>
         <div id="dayF">
     
-        <label class="label2 material-symbols-rounded" for="myCheck1">
-        <label class="label" for="myCheck1">
-        <input type="checkbox" class="checkbox" id="myCheck1" value=""  name=" Injection" onclick="toggle.call(this)">
-      </label>Injsyringe</label>
+        <label class="label2 material-symbols-rounded" for=" syringe">
+        <label class="label" for=" syringe">
+        <input type="checkbox" class="checkbox" id=" syringe" value=""  name="Injection" onclick="toggle.call(this)">
+        Inj</label>syringe</label>
 
-         <label class="label2 material-symbols-rounded" for="myCheck2">
-         <label class="label" for="myCheck2">
-         <input type="checkbox" class="checkbox" id="myCheck2" value="" name=" Cognition" onclick="toggle.call(this)">
-        </label>CogCognition</label>
+         <label class="label2 material-symbols-rounded" for=" cognition">
+         <label class="label" for=" cognition">
+         <input type="checkbox" class="checkbox" id=" cognition" value="" name=" Cognition" onclick="toggle.call(this)">
+         Cog</label>cognition</label>
 
-         <label class="label2 material-symbols-rounded" for="myCheck3">
-         <label class="label" for="myCheck3">
-         <input type="checkbox" class="checkbox" id="myCheck3" value="" name=" Balance" onclick="toggle.call(this)">
-        </label>Balfalling</label>
+         <label class="label2 material-symbols-rounded" for=" falling">
+         <label class="label" for=" falling">
+         <input type="checkbox" class="checkbox" id=" falling" value="" name=" Balance" onclick="toggle.call(this)">
+         Bal</label>falling</label>
 
-         <label class="label2 material-symbols-rounded" for="myCheck4">
-         <label class="label" for="myCheck4">
-        <input type="checkbox" class="checkbox" id="myCheck4" value="" name=" Migraine" onclick="toggle.call(this)">
-      </label>Migbackground_replace</label>
+         <label class="label2 material-symbols-rounded" for=" background_replace">
+         <label class="label" for=" background_replace">
+        <input type="checkbox" class="checkbox" id=" background_replace" value="" name=" Migraine" onclick="toggle.call(this)">
+        Mig</label>background_replace</label>
 
-        <label class="label2 material-symbols-rounded" for="myCheck5">
-        <label class="label" for="myCheck5">
-         <input type="checkbox" class="checkbox" id="myCheck5" value="" name=" Pain" onclick="toggle.call(this)">
-        </label>Painstars_2</label>
+        <label class="label2 material-symbols-rounded" for=" stars_2">
+        <label class="label" for=" stars_2">
+         <input type="checkbox" class="checkbox" id=" stars_2" value="" name=" Pain" onclick="toggle.call(this)">
+         Pain</label>stars_2</label>
+
+         <label class="label2 material-symbols-rounded" for=" visibility">
+          <label class="label" for=" visibility">
+          <input type="checkbox" class="checkbox" id=" visibility" value="" name=" Vision" onclick="toggle.call(this)">
+          Vis</label>visibility</label>
+
          <div id="calendar">
-         <a href="index.html" id="cal" style="float:right">      Calendar</a>
+         <a href="index.html" id="cal">Calendar</a>
         </div>
 
     <form id="DayNote">
-        Name: <input type="text" name="DayNote" value="draft">
+        Name: <input type="text"  name="DayNote" value="draft">
       </form>
       
-      <textarea id="tArea" rows="15%" cols="132%" name="comment" form="DayNote">Test</textarea>
+      <textarea id="tArea" oninput="test()" height="110%" rows="15%" cols="100%" name="comment" form="DayNote" placeholder="Enter notes here"></textarea>
       </div>
 <!--<p>Click the buttons below to Quick Log and/or add detailed notes.</p>-->
 
@@ -64,498 +71,7 @@
 <button onclick="test()" class="buttons" id="test">test</button>
 <button onclick="readLS()" class="buttons" id="read"> Read</button> -->
 <div id="noteViewer">Notes Appear Here</div>
-<script defer>
 
-readLS();
-
-
-let keys =  localStorage.getItem(`lskey`);
-let keysP = JSON.stringify(keys);
-let keyCheck = localStorage.getItem(keysP);
-let keyOb = JSON.parse(keyCheck);      // //get note from local storage
-console.log(keyCheck);
-console.log(keyOb);
-console.log(keys);
-//keyParsed = JSON.parse(keys);
-//console.log(keyParsed);
-
-
-    const lsName = localStorage.getItem(keys);
-console.log(lsName);
-const parseName = JSON.parse(lsName);
-const lsDate = JSON.parse(lsName);
-
-//window.addEventListener("load", function() {            
-
-
-
-
-     if (lsDate !== null && lsDate !== undefined && lsDate.date !== null ) {
-
-        let dayNote = {
-        date: `${name}`,
-        symptoms: [],
-        notes: [],
-   };
-
-//localStorage.setItem()
-
-console.log(dayNote);
-
-     }
-
-
-
-
-
-        // Code to be executed after the page has loaded
-      //  console.log("Page loaded!");
-       // let dayNoteSt = JSON.parse(dayNote)
-      //  localStorage.setItem(keys, dayNoteSt);
-   // });   <----for window event listener
-
-
-
-keys =  localStorage.getItem(`lskey`);
-
-//  keyParse = JSON.parse(keys);
-  keyCheck = localStorage.getItem(keys);         //get note from local storage
-  //(keyParse);                              
-  keyOb = JSON.parse(keyCheck);              //load note
-
-  
-function readLS(){
-//console.log(`whyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy`)
-
-
-
-
-let dayNote = {
-        date: `${name}`,
-        symptoms: [],
-        notes: [],
-      };
-
-
-
-
-
-
-
-nameTest = localStorage.getItem(name);
-nameCheck = JSON.parse(nameTest);
-console.log(JSON.parse.nameCheck);
-
-   // test();
-/*
-    let keys =  localStorage.getItem(`lskey`);
-   let keyCheck = localStorage.getItem(keys);
-   console.log(keyCheck);
-
-   // let keys =  localStorage.getItem(`lskey`);
-     let keyOb = JSON.parse(keys);
-
-*/
-/*   TESTING UNDO ME PROBABLY
-const keys =  localStorage.getItem(`lskey`);
-const keyParse = JSON.parse(keys);
-const keyCheck = localStorage.getItem(keyParse);
-const keyOb = JSON.parse(keyCheck);
-
-
-TESTING UNDO ME PROBABLY
-
-*/
-
-
-
-
-
-
-  //  document.getElementById("sym").addEventListener('click', () => {
-let keys =  localStorage.getItem(`lskey`);
-//let keyParse = JSON.parse(keys);
-//let keyCheck = localStorage.getItem(keyParse); 
-let keyCheck = localStorage.getItem(keys);
-let keyOb = JSON.parse(keyCheck);      // //get note from local storage
-console.log(keyCheck);
-console.log(keyOb);
-console.log(keys);
-keyParse = localStorage.getItem(keys);
-console.log(keyParse);
-
-
-/*
-let keys =  localStorage.getItem(`lskey`);
-let keyParse = JSON.parse(keys);   //daynotes stored in LocalStorage
-
-****************TESTING****************
-
-let keyCheck = localStorage.getItem(keys);
-let keyOb = JSON.parse(keyCheck);
-     */
-
-    //console.log(keyParse);
-    const dayNotes = localStorage.getItem(keys);
-    const dayNotesOb = JSON.parse(dayNotes);
-    console.log(dayNotesOb);   //stringify to store data in LocalStorage
-    console.log(keyOb);
-    console.log(keyOb.notes);
-    console.log(keyOb.symptoms);
-   document.getElementById("noteViewer").innerHTML = keyOb.date + "<br/> " + "<br/>" +keyOb.symptoms + "<br/> " + "<br/>" + keyOb.notes;
-
-   const keyTest = localStorage.getItem(keys);
-console.log(keyTest);
-const KeytoOb = JSON.parse(keyTest);
-console.log(KeytoOb);
-
-
-
-  //  localStorage.getItem(`lskey`);
-    //keyOb = JSON.parse(`lskey`);
-
-}
-function setLS(){ console.log( "set clicked ")
-
-let keys =  localStorage.getItem(`lskey`);
-//let keyParse = JSON.parse(keys);
-let keyCheck = localStorage.getItem(keys); //get note from local storage  was keyParse, as i was storing namekeys in JSON, but now use simple string for namekey
-let keyOb = JSON.parse(keyCheck);
-console.log(keyCheck);
-console.log(keyOb);
-console.log(keys);
-//console.log(keyParse);
-//console.log(keyParse);
-    const dayNotes = localStorage.getItem(keys);     //was keyParse
-    const dayNotesOb = JSON.parse(dayNotes);
-    console.log(dayNotesOb);   //stringify to store data in LocalStorage
-    console.log(keyOb);
-    console.log(keyOb.notes);
-    console.log(keyOb.symptoms);
-   document.getElementById("noteViewer").innerHTML = keyOb.date + "<br/> " + "<br/>" +keyOb.symptoms + "<br/> " + "<br/>" + keyOb.notes;
-
-
-   let nameSt = JSON.stringify(keys);   ////was keyParse
-   console.log(nameSt);
-    keySt = JSON.stringify(keyOb);
-    localStorage.setItem(nameSt, keySt);
-    pullTest = localStorage.getItem(nameSt);
-    console.log(pullTest);
-
-    
-
-/*Array.from(document.querySelectorAll("input[type=checkbox][name=type]:checked"), e => e.value);
- let symptoms = [],
-   inputs = document.getElementsByTagName("input");*/
-
-/*for (let i = 0; inputs.length > i; i++)
-    if (inputs[i].type === "checkbox" && inputs[i].checked){
-          symptoms.push(inputs[i].value)
-        
-    };*/
-
-    //let input = document.getElementById("tArea");
-    //let inputValue = input.value;
-
-
-   // let dyNote = document.getElementById("noteViewer")   //.innerHTML
-//dyNote.innerHTML = symptoms + "<br />" + "<br />"  + inputValue ;
-
-
-//document.getElementById("noteViewer").innerHTML = symptoms + "<br />" + "<br />"  + inputValue ;
-let keySet = JSON.stringify(keyOb);
-console.log(keySet);
-localStorage.setItem(keys, keySet);   /// keys was keyParse
-
-/*
-
-//console.log(dayNotesOb); 
-const dayNotes = localStorage.getItem(keys);
-
-const dayNoteSt = JSON.stringify(dayNote);
-    localStorage.setItem(name, dayNoteSt)
-//console.log("test " + button.id)
-//    localStorage.setItem(`lskey`, name);      
-   let keys =  localStorage.getItem(`lskey`);
-   let keyOb = JSON.parse(keys);
-    console.log(keyOb);
-
-   let keyCheck = localStorage.getItem(keys);
-   console.log(keyCheck); */
-
-
-
-
-/*
-let keys =  localStorage.getItem(`lskey`);
-let keyParse = JSON.parse(keys);
-
-
-let keyOb = JSON.parse(keyCheck);
-let keySt = JSON.stringify(keyOb);
-let keyCheck = localStorage.setItem(keys,keySt);
-
-
-*/
-
-//localStorage.getItem
-};
-
-/*
-    const dayNotes = localStorage.getItem(`dayNote`);
-    const dayNotesOb = JSON.parse(dayNotes);
-    console.log(dayNotesOb);
-}*/
-
-function toggle(){
-if (this.name != this.value){
-    this.value = this.name,
-    console.log(this.name)
-}else{
-this.value = ""
-}
-cBoxCheck();
-test();/////////////// JANKY WORKAROUND TO DYNAMICALLY DISPLAY SYMPTOMS/////////////////
-test();///////////////  I AM WEIRDLY PROUD OF IT  
-
-console.log(keyOb);
-document.getElementById('noteViewer')
-}
-
-function textPush(){
-  document.getElementById("noteViewer").innerHTML = 
-  keyOb.date + "<br/> " + "<br/>" +keyOb.symptoms + "<br/> " + "<br/>" + keyOb.notes;
-};
-
-function test(){
-
-
-
-
-
-   /* const dayNotes = localStorage.getItem(`${name}`);
-const dayNotesOb = JSON.parse(dayNotes);
-console.log(dayNotesOb);
-console.log(dayNotesOb.notes);    */
-
-
-
-
-
-    const keys =  localStorage.getItem(`lskey`);
-///const keyParse = JSON.parse(keys);  //can get localstorage now  // updated to plain string keynames
-const keyCheck = localStorage.getItem(keys); // was keyParse
-const keyOb = JSON.parse(keyCheck);
-console.log(keyCheck);
-console.log(keyOb);
-//console.log(keyParse);
-const book = localStorage.getItem(keys); // was keyParse
-const bookOb = JSON.parse(book);
-
-
-Array.from(document.querySelectorAll("input[type=checkbox][name=type]:checked"), el => el.value);
- let symptoms = [],
-   inputs = document.getElementsByTagName("input");
-
-for (let i = 0; inputs.length > i; i++)
-    if (inputs[i].type === "checkbox" && inputs[i].checked){
-          symptoms.push(inputs[i].value)
-        
-    };
-
-
-
-
-
-
-
-console.log(bookOb);
-
-    console.log(keyCheck);
-
-    
-    bookOb.symptoms = symptoms;
-    const input = document.getElementById("tArea");
-    const inputValue = input.value;
-
-
-    console.log(symptoms);
-console.log(bookOb);
-
-
-
-
-console.log(bookOb);
-console.log(bookOb.symptoms);
-
-console.log(inputValue);
-bookOb.notes = inputValue;
-console.log(bookOb.notes);
-/* ***********************REENABLE to get a dbl click requirement on log button*/
-//let dyNote = document.getElementById("noteViewer")   //.innerHTML
-//dyNote.innerHTML = symptoms + "<br />" + "<br />"  + inputValue ;   
-
-     //  document.getElementById("SLS").addEventListener('click', () => {
-    console.log(bookOb);
-   let bookSt = JSON.stringify(bookOb);
-   console.log(`${keys}`); //was keyParse
-   console.log(bookSt);
-    localStorage.setItem(`${keys}`, bookSt);  // keys was keyParse
-    //console.log(JSON.parse(keys));
-    console.log(JSON.parse(bookSt));
-   // localStorage.setItem()
-                              //   });
-    //  cBoxCheck();
-     // setLS();
-  //    console.log(dyNote);
-      document.getElementById("noteViewer").innerHTML = 
-      keyOb.date + "<br/> " + "<br/>" +keyOb.symptoms + "<br/> " + "<br/>" + keyOb.notes;
-/*
-
-    const dayNotes = localStorage.getItem(`dayNote`);
-    console.log(dayNotes, JSON.parse(dayNotes));
-    Array.from(document.querySelectorAll("input[type=checkbox][name=type]:checked"), e => e.value);
- let symptoms = [],
-   inputs = document.getElementsByTagName("input");
-
-for (let i = inputs.length -1 ; i>= 0; i--)
-    if (inputs[i].type === "checkbox" && inputs[i].checked){
-          symptoms.push(inputs[i].value)
-        console.log(symptoms);
-
-        console.log(JSON.parse(dayNotes));
-console.log(dayNotes)
-dayNotes.symptoms = symptoms;
-console.log(symptoms)
-localStorage.setItem("dayNotes", JSON.stringify(dayNotes));
-console.log(JSON.parse(dayNotes.symptoms));
-
-
-
-
-
-//localStorage.setItem(`dayNote`, JSON.stringify(dayNotes));
-
-//dayNotes.test = 
-
-//console.log(dayNotes(notes[0]));
-//dayNotes[notes].push(inputValue );
-}
-
-*/
-console.log('target1');
-};
-//function popVal(){
- //   this.document.getElementById("myCheck").value = this.document.getElementById("myCheck").name;
-//}
-function logIt() {
-    loadNote();
-    let keys =  localStorage.getItem(`lskey`);
-let keyCheck = localStorage.getItem(keys);
-let keyOb = JSON.parse(keyCheck);
-console.log(keyCheck);
-console.log(keyOb);
-  
-
-/*
-const dayNotes = localStorage.getItem(`${name}`);
-
-console.log(dayNotes), JSON.parse(dayNotes)
-    console.log(dayNotes);
-                            */
-
-        const input = document.getElementById("tArea");
-const inputValue = input.value;
-console.log(inputValue);
-    console.log(keyOb.notes);
-   tahtml = document.getElementById("tArea").innerHTML
-   console.log(tahtml);
- //   console.log(dayNotes[symptoms]);
-//    const dayNote = localStorage.getItem("dayNote");
-//   console.log("dayNote: ", JSON.parse(dayNote));
-    cBoxCheck();
- // let x = document.getElementById("myCheck").value;
- // alert("The value of the checkbox is: " + x);
-//let i = 1
-
- const cb = document.querySelector('.checkbox')
-console.log(cb.checked)
-
-//Array.from(document.querySelectorAll("input[class='checkbox']")).map((el) => el.value);
-
-Array.from(document.querySelectorAll("input[type=checkbox][name=type]:checked"), e => e.value);
- let symptoms = [],
-   inputs = document.getElementsByTagName("input");
-
-for (let i = inputs.length -1 ; i>= 0; i--)
-    if (inputs[i].type === "checkbox" && inputs[i].checked){
-          symptoms.push(inputs[i].value)
-        console.log(symptoms);
-    };
-
-let symp = Array.from(document.querySelectorAll("input[type=checkbox][name=type]:checked"), e => e.value);
-for(let i = 0; i < symp.length; i++) {
-  console.log(symp);
-} 
-
-}
-
-function noteIt() {
-    
-let classes = document.getElementsByClassName("checkbox"); // Do not use a period here!
-let values = Array.prototype.map.call(classes, function(el) {
-return(el.value),
-console.log(el.value);
-});};
- 
-    const data = localStorage.getItem(`${name}`);
-    console.log("data: ", JSON.parse(data));
-
-
-function cBoxCheck(){
-  //  document.getElementById("sym").addEventListener('click', () => {
-let keys =  localStorage.getItem(`lskey`);
-//let keyParse = JSON.parse(keys);  // using plain text strings for keynames
-let keyCheck = localStorage.getItem(keys); //get note from local storage // keys was keyParse
-let keyOb = JSON.parse(keyCheck);
-console.log(keyCheck);
-console.log(keyOb);
-console.log(keys);
-//console.log(keyParse);
-
-
-
-///const dayNotes = localStorage.getItem(keys);    TESTING not loading from localstorage
-let classes = document.getElementsByClassName("checkbox"); // Do not use a period here!
-let values = Array.prototype.map.call(classes, function(el) {
-return(el.value)
-/*     2/25/2025 testing   console.log(el.value);
-//console.log(values.value);
-keyOb.symptoms = Arrayfrom(el.value);
-keyOb.notes = inputValue;
-console.log(inputvalue, "input")
-//console.log(dayNotes)
-
-
-document.getElementById("noteViewer").innerHTML = keyOb.date + "<br/> " + "<br/>" +keyOb.symptoms + "<br/> " + "<br/>" + keyOb.notes;
-//});
-
-
-
-/*  enable to save to ls from here   */ // localStorage.setItem(keys, JSON.stringify(keyOb));
-
-      
-}
-
-)
-;};
-/*
-let classesNodeList = document.querySelectorAll(".checkbox");
-let classes = Array.prototype.map.call(classesNodeList, function(element) {
-    return element.value;
-}); */
-
-</script>
 
 
     
