@@ -1,51 +1,88 @@
 html{
     height: 100%;
     width: 100%;
-    background-color: #dfdfdf;
+    background-image: linear-gradient(aqua, lightseagreen 26% 100%);
+    border-color: lightseagreen;
+    outline-width:  12% 10px;
+    outline: inset;
 }
 body{
     font-family: 'metamorphous', sans-serif;
+    font-size: 100% !important;
     height: 100%;
     width: 100%;
+    background-image: linear-gradient(aqua , lightseagreen 26% 100%);
     background-color: aqua;
     z-index: 3;
+    outline-color: lightseagreen;
+    outline-width:  12% ;
+    outline: inset;
 }
-.material-symbols{
-    font-size: 64px;
+.material-symbols-rounded{
+    font-size: 64px !important;
+    -webkit-text-size-adjust: 100%;
 }
 
 .icons{
 /*width: 98%; */
-font-size: x-large;
+font-size: 40pt !important;
 margin: 10px;
 border: 3px;
-background-color: #dfdfdf;
+background-image: radial-gradient(lightgreen 0% 10%,green 70% 90%,darkgreen 50% 70%, transparent);
+background-color: lightgreen;
+
 display: flex;
 flex-direction: row;
 word-wrap: break-word;
-/*align-content:space-around;
-justify-content: center;
+align-content:space-between;
+/*justify-content: center;
 align-self: center; */
-box-shadow: 3px 3px darkgrey;
+box-shadow: 0px 20px 70px 25px lightseagreen;
+border-radius: 3px;
 z-index: 0;
+padding: 10px;
+justify-content: center;
+align-items: center;
+align-self: center;
+align-content: center !important;
 }
 
 .Navs{
 width: 30%;
 height: 100px;
-font-size: 64px !important;
-flex-grow: 3;
+font-size: 70px !important;
+/*flex-grow: 3;*/
+background-image: radial-gradient(lightgreen 0% 10%,green 70% 90%,darkgreen 30% 100%);
 background-color: lightgreen;
 display: flex;
 align-content: space-evenly;
 align-content: space-around;
-justify-content: center;
+justify-self: center;
 align-self: center;
 z-index: 1;
+border-radius: 60%;
+border-color: darkgreen;
+border-width: 10px 2px;
+padding: 20px !important;
+color: white;
+text-shadow:
+    
+-4px -4px 0 darkslateblue,  
+ 4px -4px 0 darkslateblue,
+ -4px 4px 0 darkslateblue,
+  4px 4px 0 darkslateblue;
 }
 #currDate{
-    font-size: 39px;
-    flex-basis: 20;
+    font-size: 45pt;
+   
+    color: white;
+    text-shadow:
+       
+     -4px -4px 0 darkslateblue,  
+      4px -4px 0 darkslateblue,
+      -4px 4px 0 darkslateblue,
+       4px 4px 0 darkslateblue;
+       
 }
 #days{
 height: 75px;
@@ -60,15 +97,28 @@ z-index: 1;
     width: 75px;
     background-color: red;
 }
+#week{
+height: 5%;
+width: auto;
+box-shadow: inset;
+box-shadow: 0px -20px 70px 25px lightseagreen;
+background-image: linear-gradient(lightseagreen, aqua);
+
+}
 #weekday{
             list-style: none;
             display: flex;
-            align-content:space-around;
+            /*align-content: space-around;*/
             justify-content: space-between;
-            padding-left:4%;
-            padding-right: 8%;
+            padding-left: 1%;
+            padding-right: 2%;
             font-family: metamorphous;
-            font-size: xxx-large;
+            font-size: 50pt;
+            font-weight: 500;
+}
+li{
+  padding-left: 2%;
+  padding-right: 1%;
 }
 #daysWrapper{
     width: 100%;
@@ -77,29 +127,54 @@ z-index: 1;
     align-items: flex-start;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    background-color: purple;
+    flex-wrap: wrap !important;
+    text-wrap: wrap !important;
+    background-color: transparent;
 }
-      .wDates{
+.wDates{
+flex-direction: row;
+display: flex;
+text-wrap: wrap !important;
+flex-wrap: wrap !important;
 width: 14%;
 height: 15%;
-min-height: 0%;
-font-family: metamorphous;
-font-size: xxx-large;
-color: blueviolet;
+min-width: 10%;
+max-width: 14%;
+min-height: 10%;
+max-height: 15%;
+font-family: metamorphous ;
+font-size: 34pt !important;
+font-weight: 990 !important;
+
+color: darkgreen;
 border-radius: 15px;
+justify-content: safe;
+
 }
 
 .bDates{
-background-color: transparent;
+background-color: slategrey;
 height: 15%; 
 width: 14%;
 min-height: 15%;
-font-family: fantasy;
-font-size: xxx-large;
-color: blueviolet;
+font-family: metamorphous;
+font-size: 50pt;
+font-weight: 800;
+color: silver;
 border-radius: 15px;
 }
+
+.nDates{
+  background-color: slategrey;
+  height: 15%; 
+  width: 14%;
+  min-height: 15%;
+  font-family: metamorphous;
+  font-size: 50pt;
+  font-weight: 800;
+  color: silver;
+  border-radius: 15px;
+  }
 
 #daysWrapperContainer{
     width: 100%;
@@ -110,6 +185,20 @@ border-radius: 15px;
 .wrapper{
     width: 100%;
     height: 100%;
+}
+#cdDate{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center !important;
+  font-size: 69px;
+  height: auto;
+  box-shadow: 0px -20px 70px 25px lightseagreen;
+background-image: linear-gradient(lightseagreen, aqua, lightseagreen 120% 200%);
+}
+#dispDate{
+  height: 10px;
+  justify-self: center !important;
 }
 .notes{
     align-self: start;
@@ -133,48 +222,123 @@ border-radius: 15px;
     background-color: red;
 }
 #dayF{
-    align-content: flex-start;
-    align-items: flex-start;
+    /*align-content: flex-start;*/
+    /*align-items: flex-start;*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    height: 50%;
-    background-color: lightseagreen
+    /*height: 50% !important;*/
+  
+    font-size: 100%;
+    resize: none;
+   /* justify-content: space-around;*/
+  
+   background-image: radial-gradient(lightgreen 0% 10%,green 70% 90%,darkgreen 30% 100%);
+   background-color: lightgreen;
 }
 .metamorphous-regular {
     font-family: "Metamorphous", serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 60pt;
   }
   #DayNote{
     display: none;
   }
   #noteViewer{
-    font-size: 22pt;
+    height: 100%;
+    width: 100%;
+    font-size: 45pt !important;
+    text-wrap: wrap;
+    padding: 2%;
+    box-shadow: 0px -20px 70px 25px lightseagreen;
+background-image: linear-gradient(lightseagreen, aqua, aqua, aqua, lightseagreen 45%);
   }
-  #cal{
-    font-size: 20pt;
-  }
+ 
   .checkbox{
-    font-size: xxx-large;
-    
+    font-size: 45pt;
+    height: 50px;
+    width: 50px;
+    border-radius: 45%;
+    color: white;
+    text-shadow:
+        
+    -2px -2px 0 darkslateblue,  
+     2px -2px 0 darkslateblue,
+     -2px 2px 0 darkslateblue,
+      2px 2px 0 darkslateblue;
   }
   .label{
-    font-size: x-large;
+    height: 100%;
+    width: 100%;
+    font-size: 40pt !important;
+    font-family: "Metamorphous", serif;
+    color: white;
+    text-shadow:
+        
+    -2px -2px 0 darkslateblue,  
+     2px -2px 0 darkslateblue,
+     -2px 2px 0 darkslateblue,
+      2px 2px 0 darkslateblue;
+  }
+  .label2{
+    font-size: 70pt;
+    font-size: 100%;
+    color: white;
+    text-shadow:
+        
+    -2px -2px 0 darkslateblue,  
+     2px -2px 0 darkslateblue,
+     -2px 2px 0 darkslateblue,
+      2px 2px 0 darkslateblue;
+  }
+  .material-symbols-outlined {
+    font-variation-settings:'opsz' 48;
   }
   #tArea{
-    font-size: xx-large;
+    font-size: 45pt !important;
+    font-family: "Metamorphous", serif !important;
+    resize: none;
+    word-wrap: wrap;
+    height: 85%;
   }
-  #noteviewer{
-   display: flex;
-    justify-items: center;
-  }
+  
+    
+  
   #cal{
-    display:flex;
+    padding-right: 2%;
+    /*float: right !important;
+    display: flex;*/
+    /*align-self: flex-end !important;
+    justify-self: flex-end !important;*/
     font-family: "Metamorphous", serif;
+    font-size: 45pt;
+    text-decoration: none;
+    color: white;
+    text-shadow:
+        
+    -2px -2px 0 darkslateblue,  
+     2px -2px 0 darkslateblue,
+     -2px 2px 0 darkslateblue,
+      2px 2px 0 darkslateblue;
+  
   }
 #calendar{
+ 
+  margin-left: auto !important;
     display: flex;
-    justify-content: flex-end;
+   align-items: flex-end;
+   background-image: radial-gradient(lightgreen, green 85% 100%);
+   border-radius: 40%;
+   border-color: darkgreen;
+   border-width: medium;
+   color: white;
+   text-shadow:
+       
+   -2px -2px 0 darkslateblue,  
+    2px -2px 0 darkslateblue,
+    -2px 2px 0 darkslateblue,
+     2px 2px 0 darkslateblue;
+
 }
