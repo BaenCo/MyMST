@@ -246,8 +246,11 @@ background-image: linear-gradient(lightseagreen, aqua, lightseagreen 120% 200%);
   #noteViewer{
     height: 100%;
     width: 100%;
+    resize: none !;
     font-size: 45pt !important;
     text-wrap: wrap;
+    word-wrap: break-word;
+   
     padding: 2%;
     box-shadow: 0px -20px 70px 25px lightseagreen;
 background-image: linear-gradient(lightseagreen, aqua, aqua, aqua, lightseagreen 45%);
