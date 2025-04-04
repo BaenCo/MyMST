@@ -8,4 +8,6 @@ As far as I know, you shouldn't have any problems running it. Put everything in 
 *Spoiler, it WAS a sleepless night!*
 
 
-Just clone the repo, n run with chrome by right-clicking on the'index.html' file. This was built expressly for cellphone usage, as my wife rarely uses any computing device besides her cell, so please keep that in mind. To more easily run on a desktop until I can get it properly updated, right click, choose inspect, then switch to the mobile view in the debugger.
+Just clone the repo, n run with chrome by right-clicking on the'index.html' file. This was built expressly for cellphone usage, as my wife rarely uses any computing device besides her cell, so please keep that in mind. To more easily run on a desktop until I can get it properly updated, right click, choose inspect, then switch to the mobile view in the debugger. 
+
+Good news everyone! It now looks better on a larger screen, just make sure you refresh the page if you change from mobile to pc view.
