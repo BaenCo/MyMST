@@ -6,3 +6,6 @@ I am using the 3rd party api Google Fonts for the nice, clearly legible viewabil
 
 As far as I know, you shouldn't have any problems running it. Put everything in the same folder.
 *Spoiler, it WAS a sleepless night!*
+
+
+Just clone the repo, n run with chrome by right-clicking on the'index.html' file. This was built expressly for cellphone usage, as my wife rarely uses any computing device besides her cell, so please keep that in mind. To more easily run on a desktop until I can get it properly updated, right click, choose inspect, then switch to the mobile view in the debugger.
