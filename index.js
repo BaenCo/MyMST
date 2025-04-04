@@ -2,20 +2,21 @@ const lsName = localStorage.getItem(name);
 console.log(lsName);
 const parseName = JSON.parse(lsName);
 const lsDate = JSON.parse(lsName);
-
+let mOffset = 0;
 //const gebid = document.getElementById;
 const d = new Date();
 let cYear = d.getFullYear();
 const cMonth = d.getMonth();
 const cDate = d.getDate();
 const cDay = d.getDay(); 
-const lDay = new Date(cYear, cMonth , 0);
+let ci = cMonth + mOffset;
+//const lDay = new Date(cYear,  ci, 0);
 const tStamp = (d.getHours() , d.getMinutes())
 // new Date(cYear, cMonth, cDay);
-const Months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const Months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const Weekday = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
-let mOffset = 0;
-let ci = 0;
+
+
 let x = 0;
 let y = 0;
 const cMonYear = Months[cMonth + mOffset] + " " + cYear;
@@ -29,11 +30,11 @@ console.log(output);
 console.log(x);
 console.log(y);
 let test = cMonth + mOffset;
-let sDay = 0;
+//let sDay = 0;
 //= new Date(cYear + y, ci, 1, 0).getDay();
 let foo = new Date((cYear + y), (cMonth + mOffset, 1)).getDay;
 //console.log(sDay);
-console.log( Months[ci] +" " + cDate + " "+( cYear + y).getDay)
+console.log( `${Months[ci] +" " + cDate + " "+( cYear + y)+ " " + Weekday[cDay]}`);
 
 
 /*  if(cYear + y > 2024 && sDay == 0){
@@ -83,7 +84,24 @@ function yCheck(){
        }
        console.log("mOffset at negative is " + mOffset)
      
-
+       function nMonth(){
+        mOffset = mOffset + 1 ; 
+        /*(mOffset >= 11) ? mOffset - 11 : mOffset = mOffset;
+        console.log(mOffset);*/
+       
+       
+         // showCurrDate();
+         formCalendar()
+            showCurrDate();
+      };
+      function pMonth(){
+         mOffset = mOffset - 1;
+         //  Months[i--];
+        
+         showCurrDate()
+         formCalendar();
+      }
+      showCurrDate();
 
 function showCurrDate(){
     console.log(output);
@@ -107,7 +125,7 @@ console.log(y);
         datePush();
   //  (ci = ci) && (y = y)
 
-    console.log(Months[ci]);
+    
 
    // console.log( "sday " + sDay);
     console.log("mOffset catch " + mOffset)
@@ -120,10 +138,15 @@ console.log(y);
       console.log("mOffset at if is " + mOffset)
     };
 
-   
-function datePush(){document.getElementById("currDate").innerHTML = Months[ci] +" " + cDate + " "+( cYear + y);
-    ci = cMonth + mOffset;};
+    console.log(Months[ci]);
+function datePush(){
+    document.getElementById("currDate").innerHTML =  Months[cMonth] + " " + cDate + 
+    " " + cYear,
+    document.getElementById("dispDate").innerHTML = Months[ci] +" " + " "+( cYear + y);
+    ci = cMonth + mOffset;
+};
 //console.log(document.getElementById("currDate").innerHTML);
+/*
 console.log(Months[x] +" " + cDate + " " + ( cYear + y ));    
 ///console.log(fDay);
     
@@ -139,10 +162,10 @@ console.log(Months[x] +" " + cDate + " " + ( cYear + y ));
     console.log(output);
     console.log(cMonth);
     console.log(test);
-    console.log(Months[test]);
+    console.log(Months[ci]);
 
     let sDay = new Date(cYear + y, ci, 1, 0).getDay();
- 
+    
     console.log(cYear + y, Weekday[sDay], sDay);
     console.log(Weekday[sDay]);
     //console.log(Weekday[zDay], zDay);
@@ -153,48 +176,50 @@ console.log(Months[x] +" " + cDate + " " + ( cYear + y ));
     console.log(Weekday[3]);
     console.log(Weekday[4]);
     console.log(Weekday[5]);
-    console.log(Weekday[6]);
+    console.log(Weekday[6]); */
     datePush();
 };
 
-function nMonth(){
-  mOffset = mOffset + 1 ; 
-  /*(mOffset >= 11) ? mOffset - 11 : mOffset = mOffset;
-  console.log(mOffset);*/
- 
- 
-    showCurrDate();
-   formCalendar();
-  //    showCurrDate();
-};
-function pMonth(){
-   mOffset = mOffset - 1;
-   //  Months[i--];
-   showCurrDate();
-   formCalendar();
-}
-showCurrDate();
-
+/*
+console.log("currdate " + Months[ci])
 function lastDay(){
-document.getElementById("lastMDay").innerHTML = lDay;
-console.log(lDay);
+//document.getElementById("lastMDay").innerHTML = lDay
+console.log(lDay)
+console.log(lDay.getDay())
+console.log(lDay.getDate())
 }
-
-
+lastDay()
+*/
 function formCalendar(){
-    let sDay = new Date(cYear + y, ci, 1, 0).getDay();
-lD = new Date(cYear + y, ci + 1, 0).getDate()
-
-let i = 1;
-    document.querySelectorAll(".wDates").forEach(el => el.remove());
+    console.log(ci)
+    let lDay = new Date(cYear,  ci, 0);
+    ci = cMonth + mOffset;
+    console.log("formCal " + Months[ci])
+    let sDay = new Date(cYear + y, ci, 1, 0).getDay()
+    lD = new Date(cYear + y, ci + 1, 0).getDate()
+    lMlD = lDay.getDate() //last month last day
+    console.log(lMlD)
+    console.log(sDay)
+    sDaD = sDay - 1
+    lMlW = (lMlD - sDaD ) //last month last week portion
+    nMsD = new Date(cYear + y, ci + 1, 1, 0).getDay() //next month starting day
+    console.log(lMlW)
+    console.log(nMsD)
+    console.log(lD)
+    console.log(ci)
+//let i = 0;
+    document.querySelectorAll(".allDates").forEach(el => el.remove());
+    /*document.querySelectorAll(".wDates").forEach(el => el.remove());
     document.querySelectorAll(".bDates").forEach(el => el.remove());
+    document.querySelectorAll(".nDates").forEach(el => el.remove()); */
         console.log(sDay);
         console.log(lDay, cDay );
-    for( let b = 0; b < sDay; b++){ console.log(sDay);
+    for( let b = 0; b < sDay; b++ ){ console.log(sDay);
     const button = document.createElement("button");
-button.innerText = "";
-
-button.id = (`${b}  ${Months[ci]} ${(cYear + y)}`);
+button.innerText = `${lMlW + b}`
+console.log(lD)
+console.log(`${lMlW}`)
+button.id = (`${lMlW}  ${Months[ci - 1]} ${(cYear + y)}`);
 button.classList.add('bDates', 'allDates');
 
 document.getElementById("daysWrapper");
@@ -207,6 +232,7 @@ button.addEventListener('click', () => {
 
 )
 }
+
 for( let i = 1; i <= lD; i++) {
 const Days = [i];
 //Days = Days[i];
@@ -216,18 +242,52 @@ const Days = [i];
 
 
 const button = document.createElement("button");
-button.innerText = `${i}`;
+const dayNotes = `dayNote${i}`
+const name = (" dayNotes " + `${Months[ci]} `+` ${i} ` + ` ${(cYear + y)}`);
+console.log(i)
+console.log(name);
+const keyTest =  localStorage.getItem(`${name}`);
+
+
+const keyOb = JSON.parse(keyTest);
+console.log(keyOb)
+/*
+if (keyOb && !keyOb.icons){
+iconShow = ""
+    }else if (keyOb && keyOb.icons){
+        iconShow = keyOb.icons
+    }else{
+        console.log("its elsin")
+    }
+
+*/
+
+
+    if (keyOb && keyOb.icons) { // Check if keyOb and keyOb.icons exist
+        console.log(keyOb)
+        console.log(keyOb.icons);
+        iconShow = i + keyOb.icons;
+        button.style.color = "red"
+       /* for (let i = 0; i < keyOb.icons.length; i++){
+            iconShow += iconShow;
+            console.log(iconShow)
+        }*/
+    } else{
+        console.log(localStorage.getItem(dayNotes))
+        iconShow = `${i}`
+    }
+button.innerText = ` ${iconShow}`;
 //console.log(Months[x]);
 button.id = (`${i} ${Months[ci]} ${(cYear + y)}`);
 let id = button.id;
-button.classList.add('wDates', 'allDates');
+button.classList.add('wDates', 'allDates', 'material-symbols-rounded');
 let daysWrapper = document.getElementById("daysWrapper");
 daysWrapper.appendChild(button);
+
 button.addEventListener('click', () => {
-    const dayNotes = `dayNote${i}`
-    console.log(i)
-    console.log(dayNotes);
-    const name = (" dayNotes " + `${Months[ci]} `+` ${i} ` + ` ${(cYear + y)}`);
+    
+
+    
   //  localStorage.setItem('lskey', name);
   
     const lskeyTest = localStorage.getItem('lskey');
@@ -307,7 +367,7 @@ console.log("test " + button.id)
 
 
 newNote();
-    }else if (name == lsName){ 
+   }else if (name == lsName){ 
         
 
       
@@ -405,7 +465,7 @@ if (localStorage.getItem(lskeyTest) == null) {
         
 
     
- localStorage.setItem(name, dayNoteSt);       //for legacy purposesy
+ localStorage.setItem(name, dayNoteSt);       //for legacy purposes
     pullTestSt =localStorage.getItem(nameSt); 
     pullTest = localStorage.getItem(name);
     console.log(pullTest);
@@ -425,7 +485,25 @@ div.classList.add('notes');
 newNote();
 
 
-})}}
+}
+
+
+)
+}
+for( let n = nMsD, i = 1; n < 7 && n > 0; n++, i++){ console.log(nMsD);
+    const button = document.createElement("button");
+button.innerText = `${i}`;
+console.log(lD)
+console.log(`${lMlW}`)
+button.id = (`${nMsD}  ${Months[ci + 1]} ${(cYear + y)}`);
+button.classList.add('nDates', 'allDates');
+
+document.getElementById("daysWrapper");
+daysWrapper.appendChild(button);
+
+}
+}
+
 
 function newNote(){
 //     LINK TO CHECKBOX.HTML   ---> 
