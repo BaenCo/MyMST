@@ -1,4 +1,14 @@
-
+bodyFS = document.body
+calFS = document.getElementById("daysWrapper")
+cdFS = document.getElementById('currDate')
+tAreaFS = 
+screenSize = window.screen.availWidth
+console.log(screenSize)
+if (screenSize > 1000){
+    document.body.style.zoom = 0.4;
+    console.log(bodyFS)
+     console.log(calFS)
+}
 
 let inputs = document.getElementsByTagName("input");
 let keys =  localStorage.getItem(`lskey`);
