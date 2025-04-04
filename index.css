@@ -3,8 +3,7 @@ html{
     width: 100%;
     background-image: linear-gradient(aqua, lightseagreen 26% 100%);
     border-color: lightseagreen;
-    outline-width:  12% 10px;
-    outline: inset;
+
 }
 body{
     font-family: 'metamorphous', sans-serif;
@@ -14,9 +13,7 @@ body{
     background-image: linear-gradient(aqua , lightseagreen 26% 100%);
     background-color: aqua;
     z-index: 3;
-    outline-color: lightseagreen;
-    outline-width:  12% ;
-    outline: inset;
+
 }
 .material-symbols-rounded{
     font-size: 64px !important;
