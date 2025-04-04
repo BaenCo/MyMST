@@ -1,3 +1,14 @@
+bodyFS = document.body
+calFS = document.getElementById("daysWrapper")
+cdFS = document.getElementById('currDate')
+tAreaFS = 
+screenSize = window.screen.availWidth
+console.log(screenSize)
+if (screenSize > 1000){
+    document.body.style.zoom = 0.6;
+    console.log(bodyFS)
+     console.log(calFS)
+}
 const lsName = localStorage.getItem(name);
 console.log(lsName);
 const parseName = JSON.parse(lsName);
