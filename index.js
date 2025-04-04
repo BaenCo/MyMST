@@ -263,7 +263,7 @@ iconShow = ""
 */
 
 
-    if (keyOb && keyOb.icons) { // Check if keyOb and keyOb.icons exist
+    if (keyOb && keyOb.icons.length > 0 ) { // Check if keyOb and keyOb.icons exist
         console.log(keyOb)
         console.log(keyOb.icons);
         iconShow = i + keyOb.icons;
@@ -272,7 +272,8 @@ iconShow = ""
             iconShow += iconShow;
             console.log(iconShow)
         }*/
-    } else{
+    } else {
+        button.style.color = "darkgreen"
         console.log(localStorage.getItem(dayNotes))
         iconShow = `${i}`
     }
@@ -340,6 +341,7 @@ button.addEventListener('click', () => {
         date: `${name}`,
         symptoms: [],
         notes: [],
+        icons: [],
       };
       dayNote.ID = i;
      console.log( dayNote.symptoms.length);
